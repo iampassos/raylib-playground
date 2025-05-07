@@ -26,7 +26,7 @@ typedef struct Ball {
 } Ball;
 
 typedef struct State {
-    Ball balls[3];
+    Ball balls[12];
     int playing;
 } State;
 

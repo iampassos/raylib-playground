@@ -5,7 +5,12 @@
 #define ACCELERATION 10
 #define MAX_VELOCITY 1000
 
-int main() {
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        printf("Usage: client <ip>\n");
+        return 1;
+    }
+
     srand(time(NULL));
     int socketfd = socket(AF_INET, SOCK_DGRAM, 0);
 
@@ -13,7 +18,7 @@ int main() {
     socklen_t len = sizeof(server_addr);
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(PORT);
-    server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
+    server_addr.sin_addr.s_addr = inet_addr(argv[1]);
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Playground");
     SetTargetFPS(60);

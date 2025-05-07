@@ -2,7 +2,10 @@
 #include <unistd.h>
 
 #define COLORS                                                                 \
-    (Color[]) { SKYBLUE, WHITE, YELLOW }
+    (Color[]) {                                                                \
+        SKYBLUE, WHITE, YELLOW, BROWN, GRAY, GOLD, PINK, RED, LIME, GREEN,     \
+            VIOLET, PURPLE                                                     \
+    }
 
 int main() {
     State state = {0};
