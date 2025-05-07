@@ -1,7 +1,8 @@
 CC=gcc
 
-all:
-	$(CC) src/game.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+server:
+	$(CC) src/server.c -o server.out -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
-clean:
-	rm a.out
+client:
+	$(CC) src/client.c -o client.out -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+
